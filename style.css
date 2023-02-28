@@ -142,22 +142,25 @@ p {
 
 .link-shortener {
     width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('images/bg-shorten-desktop.svg');
     background-color: #3A3053;
     background-size: cover;
-    margin: 0px 10px;
+    margin: 10px 10px;
     padding: 20px;
     border-radius: 5px;
+}
+
+.center-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
     min-width: 330px;
     font-size: var(--small-font-size);
     font-family: var(--font-family);
-    color: var(--color5);
+    color: var(--color4);
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -169,13 +172,24 @@ input {
     border-radius: 5px;
 }
 
-input .error {
-    color: var(--color7);
-    border: 1px solid var(--color7);
+.error {
+    border: 2px solid var(--color7);
 }
 
-span .error-message {
+.error::placeholder {
     color: var(--color7);
+}
+
+.error-message {
+    color: var(--color7);
+    font-size: var(--small-font-size);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .link-copying-area {
