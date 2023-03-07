@@ -137,7 +137,6 @@ p {
     background-image: linear-gradient(to bottom, white 50%, var(--color1) 50%);
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .link-shortener {
@@ -145,7 +144,7 @@ p {
     background-image: url('images/bg-shorten-desktop.svg');
     background-color: #3A3053;
     background-size: cover;
-    margin: 10px 10px;
+    margin: 10px 10px 0px;
     padding: 20px;
     border-radius: 5px;
 }
@@ -192,17 +191,12 @@ input {
     display: block;
 }
 
-.link-copying-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .link-container {
     width: 500px;
     background-color: white;
     border-radius: 3px;
-    margin: 0px 10px;
+    margin: 20px auto;
     padding: 9px 12px;
     display: flex;
     justify-content: flex-end;
@@ -221,6 +215,14 @@ input {
 .shorten-link {
     color: var(--color8);
     margin-right: 10px;
+}
+
+.checked {
+    background-color: var(--color4);
+}
+
+.checked:hover {
+    background-color: var(--color4);
 }
 
 .advanced-statistics {
