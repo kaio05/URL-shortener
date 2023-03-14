@@ -4,12 +4,20 @@ const errorMessage = document.querySelector('.error-message');
 const linkArea = document.querySelector('.link-copying-area')
 
 linkButton.onclick = () => {
-    shortenIt();
+    if (input.value != '') {
+        shortenIt();
+    } else {
+        urlError();
+        alert('typing error');
+    }
 }
 
 input.addEventListener('keypress', e => {
-    if (e.key == 'Enter') {
+    if (e.key == 'Enter' && input.value != '') {
         shortenIt();
+    } else if (e.key == 'Enter') {
+        urlError();
+        alert('typing error');
     }
 })
 
@@ -34,6 +42,7 @@ async function shortenURL(url) {
             } else {
                 //console.log(`Error: ${xhr.status}`);
                 urlError()
+                alert('request error')
             }
         }
 };
@@ -98,3 +107,10 @@ function urlError() {
     input.classList.add('error');
     errorMessage.classList.add('show');
 }
+
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu')
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hide');
+}) 
