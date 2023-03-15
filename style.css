@@ -71,6 +71,10 @@ header {
 
     }
 
+    .above {
+        margin-left: 10vw;
+    }
+
     .start {
         display: block;
         position: relative;
@@ -515,3 +519,13 @@ footer .logo {
 .hide {
     display: none;
 }
+
+
+button#clear {
+    margin: 10px auto;
+    background-color: var(--color7);
+}
+
+/* textarea {
+    display: none;
+} */

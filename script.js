@@ -4,20 +4,22 @@ const errorMessage = document.querySelector('.error-message');
 const linkArea = document.querySelector('.link-copying-area')
 
 linkButton.onclick = () => {
-    if (input.value != '') {
-        shortenIt();
-    } else {
+    if (input.value == '') {
         urlError();
-        alert('typing error');
+    } else if (input.value == 'clear') {
+        clearHistory();
+    } else {
+        shortenIt();
     }
 }
 
 input.addEventListener('keypress', e => {
-    if (e.key == 'Enter' && input.value != '') {
-        shortenIt();
-    } else if (e.key == 'Enter') {
+    if (e.key == 'Enter' && input.value == '') {
         urlError();
-        alert('typing error');
+    } else if (e.key == 'Enter' && input.value == 'clear') {
+        clearHistory();
+    } else  if (e.key == 'Enter') {
+        shortenIt();
     }
 })
 
@@ -42,7 +44,6 @@ async function shortenURL(url) {
             } else {
                 //console.log(`Error: ${xhr.status}`);
                 urlError()
-                alert('request error')
             }
         }
 };
@@ -50,6 +51,8 @@ async function shortenURL(url) {
 
 
 function createContainer(short, original) {
+    checkMaxLink();
+
     const container = document.createElement('div');
     const containers = document.querySelectorAll('.linkcontainer');
     container.classList.add('link-container');
@@ -89,9 +92,6 @@ function copyButtonFunction(shortContainer, container) {
             let button = e.currentTarget;
             buttons.forEach(btn => btn != button && btn.classList.remove('checked'));
             button.classList.add('checked');
-            console.log(button);
-
-            // credits: https://stackoverflow.com/questions/73754798/how-can-i-deselect-one-button-when-i-select-another
     });
     });
     
@@ -113,4 +113,23 @@ const menu = document.querySelector('.menu')
 
 menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hide');
-}) 
+}); 
+
+
+window.addEventListener('load', () => {
+    linkArea.innerHTML = localStorage.getItem(key);
+    
+    console.log(history);
+});
+
+function clearHistory() {
+    localStorage.clear();
+    window.location.reload();
+}
+
+function checkMaxLink() {
+    let num = linkArea.childElementCount;
+    if (num > 4) {
+        linkArea.removeChild(linkArea.lastChild);
+    }
+}
