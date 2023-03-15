@@ -515,3 +515,8 @@ footer .logo {
 .hide {
     display: none;
 }
+
+button#clear {
+    margin: 10px 50%;
+    background-color: var(--color7);
+}

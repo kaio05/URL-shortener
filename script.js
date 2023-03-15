@@ -1,7 +1,8 @@
 const linkButton = document.querySelector('.shorten-btn');
 const input = document.querySelector('.input');
 const errorMessage = document.querySelector('.error-message');
-const linkArea = document.querySelector('.link-copying-area')
+const linkArea = document.querySelector('.link-copying-area');
+let key = 'elementos';
 
 linkButton.onclick = () => {
     if (input.value != '') {
@@ -23,7 +24,7 @@ input.addEventListener('keypress', e => {
 
 async function shortenIt() {
     //console.log('calling');
-    shortenURL(input.value);
+    shortenURL('https://www.facebook.com/');
 };
 
 async function shortenURL(url) {  
@@ -50,10 +51,11 @@ async function shortenURL(url) {
 
 
 function createContainer(short, original) {
+
     const container = document.createElement('div');
-    const containers = document.querySelectorAll('.linkcontainer');
+
     container.classList.add('link-container');
-    
+    const containers = document.querySelectorAll('.container');
     const URLContainer = document.createElement('span');
     URLContainer.classList.add('original-url');
     URLContainer.innerHTML = original;
@@ -64,9 +66,12 @@ function createContainer(short, original) {
     
     container.appendChild(URLContainer);
     container.appendChild(shortContainer);
-    linkArea.appendChild(container);
+
+    linkArea.prepend(container);
 
     copyButtonFunction(shortContainer, container);
+
+    localStorage.setItem(key, linkArea.innerHTML);
 }
 
 function copyButtonFunction(shortContainer, container) {
@@ -94,8 +99,6 @@ function copyButtonFunction(shortContainer, container) {
             // credits: https://stackoverflow.com/questions/73754798/how-can-i-deselect-one-button-when-i-select-another
     });
     });
-    
-    console.log(buttons)
 }
 
 function urlSuccess() {
@@ -113,4 +116,18 @@ const menu = document.querySelector('.menu')
 
 menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hide');
-}) 
+}); 
+
+window.addEventListener('load', () => {
+    linkArea.innerHTML = localStorage.getItem(key);
+    
+    console.log(history);
+});
+
+
+clearBtn = document.getElementById('clear');
+clearBtn.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.reload();
+})
+
