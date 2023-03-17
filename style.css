@@ -531,6 +531,10 @@ button#clear {
     display: none;
 } */
 
-input#copy-text {
-    display: block;
+input#copyText {
+    display: none;
+}
+
+button#copiar {
+    display: none;
 }

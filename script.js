@@ -2,7 +2,7 @@ const linkButton = document.querySelector('.shorten-btn');
 const input = document.querySelector('.input');
 const errorMessage = document.querySelector('.error-message');
 const linkArea = document.querySelector('.link-copying-area');
-var copyText = document.getElementById('copy-text');
+const copyText = document.getElementById('copyText');
 
 linkButton.onclick = () => {
     input.value == '' ? 
@@ -92,15 +92,13 @@ const copyButtonFunction = async () => {
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            var toolTip = document.getElementById('toolTip');
+            const toolTip = document.getElementById('toolTip');
             toolTip.innerHTML = 'Copied:', copyText.value;
 
             buttons.forEach(btn => btn != button && btn.classList.remove('checked'));
             button.classList.add('checked');
+        });
     });
-    });
-    
-    console.log(buttons)
 }
 
 function urlSuccess() {
@@ -124,8 +122,6 @@ menuBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     linkArea.innerHTML = localStorage.getItem('key');
     copyButtonFunction(copyText);
-    
-    console.log(linkArea.innerHTML);
 });
 
 function clearHistory() {
@@ -137,13 +133,4 @@ function checkMaxLink() {
     let num = linkArea.childElementCount;
     num > 4 ?
         linkArea.removeChild(linkArea.lastChild) : console.log();
-}
-
-
-function copiar() {
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-    var toolTip = document.getElementById('toolTip');
-    toolTip.innerHTML = 'Copied:', copyText.value;
 }
