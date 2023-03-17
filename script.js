@@ -92,7 +92,8 @@ const copyButtonFunction = async () => {
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            alert('Copied the text:', copyText.value)
+            var toolTip = document.getElementById('toolTip');
+            toolTip.innerHTML = 'Copied:', copyText.value;
 
             buttons.forEach(btn => btn != button && btn.classList.remove('checked'));
             button.classList.add('checked');
