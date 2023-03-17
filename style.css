@@ -343,6 +343,7 @@ input {
 .original-url {
     color: var(--color4);
     margin-right: auto;
+    overflow: auto;
 }
 
 .shorten-link {
@@ -529,3 +530,7 @@ button#clear {
 /* textarea {
     display: none;
 } */
+
+input#copy-text {
+    display: block;
+}

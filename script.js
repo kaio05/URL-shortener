@@ -1,26 +1,21 @@
 const linkButton = document.querySelector('.shorten-btn');
 const input = document.querySelector('.input');
 const errorMessage = document.querySelector('.error-message');
-const linkArea = document.querySelector('.link-copying-area')
+const linkArea = document.querySelector('.link-copying-area');
+var copyText = document.getElementById('copy-text');
 
 linkButton.onclick = () => {
-    if (input.value == '') {
-        urlError();
-    } else if (input.value == 'clear') {
-        clearHistory();
-    } else {
-        shortenIt();
-    }
+    input.value == '' ? 
+        urlError() :
+            input.value == 'clear' ?
+                clearHistory() :
+                    shortenIt()
 }
 
 input.addEventListener('keypress', e => {
-    if (e.key == 'Enter' && input.value == '') {
-        urlError();
-    } else if (e.key == 'Enter' && input.value == 'clear') {
-        clearHistory();
-    } else  if (e.key == 'Enter') {
-        shortenIt();
-    }
+    e.key == 'Enter' && input.value == '' ?  urlError() :
+        e.key == 'Enter' && input.value == 'clear' ? clearHistory() :
+            e.key == 'Enter' ? shortenIt() : console.log();
 })
 
 async function shortenIt() {
@@ -43,7 +38,7 @@ async function shortenURL(url) {
                 //console.log(xhr.status);
             } else {
                 //console.log(`Error: ${xhr.status}`);
-                urlError()
+                urlError();
             }
         }
 };
@@ -54,42 +49,51 @@ function createContainer(short, original) {
     checkMaxLink();
 
     const container = document.createElement('div');
-    const containers = document.querySelectorAll('.linkcontainer');
+
     container.classList.add('link-container');
     
     const URLContainer = document.createElement('span');
     URLContainer.classList.add('original-url');
-    URLContainer.innerHTML = original;
+    URLContainer.innerText = original;
     
     const shortContainer = document.createElement('span');
     shortContainer.classList.add('shorten-link');
-    shortContainer.innerHTML = short;
+    shortContainer.innerText = short;
     
-    container.appendChild(URLContainer);
-    container.appendChild(shortContainer);
-    linkArea.appendChild(container);
+    container.append(URLContainer);
+    container.append(shortContainer);
+    linkArea.prepend(container);
 
-    copyButtonFunction(shortContainer, container);
-}
-
-function copyButtonFunction(shortContainer, container) {
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
-    copyBtn.innerHTML = 'Copy';
+    copyBtn.innerText = 'Copy';
+    copyBtn.id = short;
     container.appendChild(copyBtn);
-    let buttons = document.querySelectorAll('.copy-btn');
-    
-    buttons.forEach(pbuttons => {
-        pbuttons.addEventListener('click', e => {
-            let copyText = shortContainer;
-            let textArea = document.createElement('textarea');
-            textArea.value = copyText.innerHTML;
-            document.body.appendChild(textArea);
-            textArea.select();
-            navigator.clipboard.writeText(textArea.value);
-            textArea.remove();
 
+    copyButtonFunction(copyText);
+
+    localStorage.setItem('key', linkArea.innerHTML);
+}
+
+const copyButtonFunction = async () => {
+
+    let buttons = document.querySelectorAll('.copy-btn');
+    buttons.forEach(item => {
+        item.addEventListener('click', async (e) => {
             let button = e.currentTarget;
+            // let copyText = button.id;
+            // try {
+            //     await navigator.clipboard.writeText(copyText);
+            //     console.log(`Content copied to clipboard: ${copyText}`);
+            // } catch (err) {
+            //     console.error('Failed to copy: ', err);
+            // }
+            copyText.value = button.id
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert('Copied the text:', copyText.value)
+
             buttons.forEach(btn => btn != button && btn.classList.remove('checked'));
             button.classList.add('checked');
     });
@@ -117,9 +121,10 @@ menuBtn.addEventListener('click', () => {
 
 
 window.addEventListener('load', () => {
-    linkArea.innerHTML = localStorage.getItem(key);
+    linkArea.innerHTML = localStorage.getItem('key');
+    copyButtonFunction(copyText);
     
-    console.log(history);
+    console.log(linkArea.innerHTML);
 });
 
 function clearHistory() {
@@ -129,7 +134,15 @@ function clearHistory() {
 
 function checkMaxLink() {
     let num = linkArea.childElementCount;
-    if (num > 4) {
-        linkArea.removeChild(linkArea.lastChild);
-    }
+    num > 4 ?
+        linkArea.removeChild(linkArea.lastChild) : console.log();
+}
+
+
+function copiar() {
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    var toolTip = document.getElementById('toolTip');
+    toolTip.innerHTML = 'Copied:', copyText.value;
 }
