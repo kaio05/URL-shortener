@@ -112,10 +112,11 @@ function urlError() {
 }
 
 const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu')
+const menu = document.querySelector('.menu');
 
 menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('hide');
+    menuBtn.classList.toggle('open');
+    menu.classList.toggle('on-screen');
 }); 
 
 
