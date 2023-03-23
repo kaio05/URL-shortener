@@ -1,22 +1,35 @@
-# Frontend Mentor - Shortly URL shortening API Challenge
+<img align="center" src="images/logo-github.png">
 
-![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)
+<h1 align="center">Frontend Mentor - Shortly URL shortening API Challenge solution</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/status-in%20development-brightgreen"/>
+  <img src="https://img.shields.io/badge/Licence-MIT-yellow"/>
+  <img src="https://img.shields.io/badge/release%20date-march-orange"/>
+</p>
 
-## Welcome! 👋
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Thanks for checking out this front-end coding challenge.
+You can open it on [The-Project](05.github.io/URL-shortener/)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Table of contents
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## The challenge
 
-Your challenge is to build out this landing page, integrate with the [shrtcode API](https://app.shrtco.de/) and get it looking as close to the design as possible.
+## Overview
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### The challenge
 
-Your users should be able to:
+# :hammer: Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - Shorten any valid URL
@@ -25,72 +38,89 @@ Your users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### :camera: Screenshot :camera:
 
-## Where to find everything
+![Shorten and copy link functionality](./images/screenshot-desktop.mdp)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+![Mobile navigation menu](./images/screenshot-mobile.mdp)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### :paperclip: Links :paperclip:
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+- Solution URL: [Add solution URL here](https://kaio05.github.io/URL-shortener/)
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
 
-## Building your project
+## My process
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### :wrench: Built with
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Semantic HTML5 markup
+- CSS custom properties
+- JavaScript
 
-## Deploying your project
+### :books: What I learned
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+```html
+<!-- HTML -->
+<svg>Learned some about svg :D</svg>
+```
+```css
+/* CSS */
+.a-basic-understanding-of {
+  z-index: property;
+  position: absolute;
+  overflow: property;
+  top: animations;
+  transform: rotate(animations);
+}
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+/* Discovered */
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+::placeholder {}
+:nth-child() {}
 
-## Create a custom `README.md`
+@media queries
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```
+```js
+// JavaScript
+const learningThis = () => {
+  console.log('Getting data from API')
+  alert('Async functions')
+  console.log('LocalStorage')
+  alert('Copy to clipboard')
+  const (e).currentTarget = (this) {}
+}
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+### :computer: Continued development
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I must continue searching for API to use on my future projects, such as studying more complex JavaScript concepts, using JSON would also be pretty good. I would also like to learn React JS.
 
-## Submitting your solution
+### :open_file_folder: Useful resources
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+- [Menu "Hamburger" Icon Animations](https://codepen.io/designcouch/pen/ExvwPY) - Helped me make the mobile menu button.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- [Animating mobile menus using CSS](https://blog.logrocket.com/animating-mobile-menus-using-css/) - Also very useful for my menu. I might check those two again later.
 
-## Sharing your solution
+- [How to copy to clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - W3Schools really helped me a lot in this project with most of my css and JS. Here is a page I looked to solve my problem with clipboard copying on mobile.
 
-There are multiple places you can share your solution:
+- [Window localStorage Property](https://www.w3schools.com/jsref/prop_win_localstorage.asp) - Another W3Schools page, but this one helped me with the history functionality.
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- [JavaScript Ternary Operator - Pi My Life Up](https://pimylifeup.com/javascript-ternary-operator/#:~:text=Finally%2C%20the%20ternary%20operator%20is,what%20we%20have%20shown%20below.) - A basic concept, but helpfull to make ma code cleaner in some parts.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- [javascript - JS remove last child? - Stack Overflow](https://stackoverflow.com/questions/34193751/js-remove-last-child ) - Stack Overflow was one resource I used the most for answering my doubts. This post helped me with the history limit function.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- [Introduction to web APIs-Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) - 
+MDN was one of the most important JS and CSS concept resource I used in this project and on any other I make, along with W3Schools and Stack Overflow. Here is a article i read when learning how to use the API.
 
-## Got feedback for us?
+- [How to shorten a URL with vanilla JavaScript and the Shrtcode API | Go Make Things](https://gomakethings.com/how-to-shorten-a-url-with-vanilla-javascript-and-the-shrtcode-api/) - This one article enlightened the use of the shrtco.de API for me, when I was still stuck on it.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+- [Como escrever um README incrível no seu GitHub | Alura](https://www.alura.com.br/artigos/escrever-bom-readme?gclid=CjwKCAjwq-WgBhBMEiwAzKSH6IlngHgjiSMSvVjOY-94OaeXbrp-_UNDNqqO-jfUh-a-jw_wT65iwhoCx90QAvD_BwE) - Thank you Alura for helping me know how to write a README, actually, that's the first one I wrote, and I want to continue improving on it!
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
-**Have fun building!** 🚀
+## Author
+
+- GitHub - [kaio05](https://github.com/kaio05)
+- Frontend Mentor - [@kaio05](https://www.frontendmentor.io/profile/kaio05)
+
