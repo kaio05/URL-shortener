@@ -492,7 +492,9 @@ footer .logo {
     z-index: 0;
 }
 
-
+.above img {
+    width: 100%;
+}
 
 .mobile-links a {
     color: white;
